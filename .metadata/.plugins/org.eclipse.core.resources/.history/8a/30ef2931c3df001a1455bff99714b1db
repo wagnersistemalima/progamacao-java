@@ -1,0 +1,70 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Employee;
+import entities.OutSourcedEmployee;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		boolean status = true;
+		
+		Employee employee;
+		
+		OutSourcedEmployee outSourcedEmployee;
+		
+		System.out.print("Enter the number of employees: ");
+		int numberEmployee = sc.nextInt();
+		
+		for (int i=1; i<=numberEmployee; i++) {
+			System.out.println("Employee #" + i + " data:");
+			System.out.print("Outsourced (y/n)? ");
+			char resposta = sc.next().charAt(0);
+			
+			do {
+				System.out.print("Resposta errada! somente (y/n)? ");
+				resposta = sc.next().charAt(0);
+				
+				
+			} while (resposta != 'n' || resposta != 'N' || resposta != 'y' || resposta != 'Y');
+			
+			if (resposta == 'N' || resposta == 'n') {
+				System.out.print("Name: ");
+				sc.nextLine();
+				String name = sc.nextLine();
+				System.out.print("Hours: ");
+				int hours = sc.nextInt();
+				System.out.print("Value per hour: ");
+				double valuePerHour = sc.nextDouble();
+				employee = new Employee(name, hours, valuePerHour);		
+			}
+			else if (resposta == 'Y' || resposta == 'y') {
+				System.out.print("Name: ");
+				sc.nextLine();
+				String name = sc.nextLine();
+				System.out.print("Hours: ");
+				int hours = sc.nextInt();
+				System.out.print("Value per hour: ");
+				double valuePerHour = sc.nextDouble();
+				System.out.print("Additional charge: ");
+				double addtionalCharge = sc.nextDouble();
+				outSourcedEmployee = new OutSourcedEmployee(name, hours, valuePerHour, addtionalCharge);
+				
+			}		
+				
+			
+		}
+		
+		System.out.println("PAYMENTS:");
+		
+		
+		sc.close();
+	}
+
+}
