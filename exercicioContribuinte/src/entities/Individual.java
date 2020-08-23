@@ -24,13 +24,17 @@ public class Individual extends TaxPayer {
 
 	@Override
 	public double tax() {
-		if ( getAnualIncome() < 20000.0) {
-			
-			return getAnualIncome() * 0.15 - healthExpenditures * 0.5;
+		
+		double basicTax = ( getAnualIncome() < 20000.0) ? getAnualIncome() * 0.15: getAnualIncome() * 0.25;
+		
+		basicTax -= getHealthExpenditures() * 0.5;
+		
+		if (basicTax < 0.0) {
+			return 0.0;
 		}
 		
 		else {
-			return getAnualIncome() * 0.25 - healthExpenditures * 0.5;
+			return basicTax;
 		}
 	}
 	
