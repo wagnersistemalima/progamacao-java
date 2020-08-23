@@ -29,8 +29,9 @@ public class Program {
 			char resposta = sc.next().charAt(0);
 			System.out.print("Color (BLACK/BLUE/RED): ");
 			Color color = Color.valueOf(sc.next());
-			System.out.print("Width: ");
+			
 			if (resposta == 'r') {
+				System.out.print("Width: ");
 				double width = sc.nextDouble();
 				System.out.print("Height: ");
 				double height = sc.nextDouble();
