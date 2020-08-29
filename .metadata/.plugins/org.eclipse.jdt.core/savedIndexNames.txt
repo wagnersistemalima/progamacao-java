@@ -3,8 +3,8 @@ INDEX VERSION 1.131+C:\Users\wagne\Documents\Linguagem java\ws-eclipse2\.metadat
 4284457097.index
 2870273084.index
 1067283944.index
+1242148261.index
 2970626017.index
-3543422066.index
 763401874.index
 155214994.index
 655967665.index
