@@ -5,7 +5,7 @@ public class Company extends TaxPayer{
 	private Integer numberOfEmployee;
 	
 	public Company() {
-		
+		super();
 	}
 
 	public Company(String name, Double anualIncome, Integer numberOfEmployee) {
@@ -24,13 +24,9 @@ public class Company extends TaxPayer{
 	@Override
 	public double tax() {
 		
-		if (numberOfEmployee <= 10) {
-			return getAnualIncome() * 0.16;
-		}
+		double basicTax = (numberOfEmployee <= 10) ? getAnualIncome() * 0.16: getAnualIncome() * 0.14;
 		
-		else {
-			return getAnualIncome() * 0.14;
-		}
+		return basicTax;
 		
 	}
 
